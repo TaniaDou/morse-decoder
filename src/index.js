@@ -67,7 +67,7 @@ function decode(expr) {
         codedSentence.push(codedLetter);
     }
     let result = '';
-    codedSentence.forEach(el => result += MORSE_TABLE[el]);
+    codedSentence.forEach(el => el in MORSE_TABLE ? result += MORSE_TABLE[el] : result += ' ');
     return result;
 }
 
